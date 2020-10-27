@@ -1,11 +1,13 @@
 <script type="text/javascript">
 	import { angka } from "@/store";
-	import { url } from "@sveltech/routify";
 	setInterval(() => $angka++, 1000);
 </script>
 
-<p>Hello World!</p>
-<p>{$angka}</p>
-<p><a href={$url('/aku')}>about me</a></p>
-<p><a href={$url('/hai/zen')}>hello zen</a></p>
-<p><a href={$url('/example')}>datatable</a></p>
+<div class="starter-template text-center py-5 px-3">
+	<h1>Svelte Garuda template</h1>
+	<p class="lead">
+		Use this template as a way to quickly start any new svelte project.
+	</p>
+	<p>Hello World!</p>
+	<p>{$angka}</p>
+</div>
