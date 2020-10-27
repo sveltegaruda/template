@@ -8,4 +8,4 @@
 <p>{$angka}</p>
 <p><a href={$url('/aku')}>about me</a></p>
 <p><a href={$url('/hai/zen')}>hello zen</a></p>
-<p><a href={$url('/danang')}>datatable</a></p>
+<p><a href={$url('/example')}>datatable</a></p>
