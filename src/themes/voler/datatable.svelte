@@ -1,8 +1,9 @@
 <script>
     import { onMount } from "svelte";
-    import { DataTable } from "../../datatable/index";
+    import { DataTable } from "@/tools/datatable/index";
 
-    export let promise;
+    export let data;
+    let promise = data.json;
 
     onMount(() => {
         // Simple Datatable
@@ -10,35 +11,48 @@
     });
 </script>
 
-voler-datatabler
-<br />
-<table class="table table-striped" id="table2">
-    <thead>
-        <tr>
-            <th>Nomor</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Company</th>
-        </tr>
-    </thead>
-    <tbody>
-        {#await promise}
-            <p>...waiting</p>
-        {:then data}
-            {#each data as d, i}
+<style>
+    .card-header {
+        border-bottom: solid 1px #eee;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">{data.header}</div>
+    <div class="card-body mt-3">
+        <table class="table table-striped" id="table2">
+            <thead>
                 <tr>
-                    <td>{i + 1}</td>
-                    <td>{d.name}</td>
-                    <td>{d.position}</td>
-                    <td>{d.company}</td>
+                    {#each data.title as d}
+                        <th>{d}</th>
+                    {:else}
+                        <th colspan="100%">Data tidak ada!</th>
+                    {/each}
                 </tr>
-            {:else}
-                <tr>
-                    <td colspan="100%">Data tidak ada!</td>
-                </tr>
-            {/each}
-        {:catch error}
-            <p style="color: red">{error.message}</p>
-        {/await}
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+                {#await promise}
+                    <p>...waiting</p>
+                {:then data}
+                    {#each data as d, i}
+                        <tr>
+                            <td>{i + 1}</td>
+                            <td>{d.name}</td>
+                            <td>{d.position}</td>
+                            <td>{d.company}</td>
+                        </tr>
+                    {:else}
+                        <tr>
+                            <td colspan="100%">Data tidak ada!</td>
+                        </tr>
+                    {/each}
+                {:catch error}
+                    <p style="color: red">{error.message}</p>
+                {/await}
+            </tbody>
+        </table>
+    </div>
+</div>
