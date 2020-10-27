@@ -19,6 +19,12 @@
                     <li class="sidebar-item  ">
                         <a href={$url('/')} class="sidebar-link">
                             <i data-feather="home" width="20" />
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  ">
+                        <a href={$url('/example')} class="sidebar-link">
+                            <i data-feather="layout" width="20" />
                             <span>Datatable</span>
                         </a>
                     </li>
