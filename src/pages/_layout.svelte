@@ -1,7 +1,5 @@
 <script type="text/javascript">
-	import { angka } from "@/store";
 	import { url } from "@sveltech/routify";
-	setInterval(() => $angka++, 1000);
 </script>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-blue">

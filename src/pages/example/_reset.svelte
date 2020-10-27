@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { url } from "@sveltech/routify";
-    import { goPerfect } from "./perfect-scrollbar";
+    import { goPerfect } from "@/tools/perfect-scrollbar";
 
     onMount(() => {
         goPerfect();
