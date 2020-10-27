@@ -21,12 +21,12 @@
 </style>
 
 <div class="card">
-    <div class="card-header">{data.header}</div>
+    <div class="card-header">{data.title}</div>
     <div class="card-body mt-3">
         <table class="table table-striped" id="table2">
             <thead>
                 <tr>
-                    {#each data.title as d}
+                    {#each data.header as d}
                         <th>{d}</th>
                     {:else}
                         <th colspan="100%">Data tidak ada!</th>

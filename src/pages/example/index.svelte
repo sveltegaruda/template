@@ -3,8 +3,8 @@
     import Datatable from "@/themes/voler/datatable.svelte";
 
     let data = {
-        header: "Customer",
-        title: ["#", "Name", "Position", "Company"],
+        title: "Customer",
+        header: ["#", "Name", "Position", "Company"],
         json: json,
     };
 </script>
