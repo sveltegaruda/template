@@ -1,12 +1,15 @@
 <script>
     import json from "./data.json";
     import Datatable from "@/themes/voler/datatable.svelte";
+    import { dt } from "@/tools/store";
 
     let data = {
         title: "Customer",
         header: ["#", "Name", "Position", "Company"],
         json: json,
     };
+
+    $dt = data;
 </script>
 
 <div class="page-title">
@@ -36,5 +39,5 @@
     </div>
 </div>
 <section class="section mt-5">
-    <Datatable {data} />
+    <Datatable />
 </section>
