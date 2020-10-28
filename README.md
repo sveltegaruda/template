@@ -131,12 +131,15 @@ Example:
 <script>
     import json from "./data.json";
     import Datatable from "@/themes/voler/datatable.svelte";
+    import { dt } from "@/tools/store";
 
     let data = {
         title: "Customer",
         header: ["#", "Name", "Position", "Company"],
         json: json,
     };
+
+    $dt = data;
 </script>
 
 .
