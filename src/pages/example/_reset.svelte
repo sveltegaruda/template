@@ -23,6 +23,14 @@
                         </a>
                     </li>
                     <li class="sidebar-item  ">
+                        <a
+                            href={$url('/example/dasboard')}
+                            class="sidebar-link">
+                            <i data-feather="layout" width="20" />
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item  ">
                         <a href={$url('/example')} class="sidebar-link">
                             <i data-feather="layout" width="20" />
                             <span>Datatable</span>
@@ -59,13 +67,28 @@
                             data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <div class="avatar mr-1">
-                                <img
-                                    src="/assets/images/avatar/avatar-s-1.png"
-                                    alt=""
-                                    srcset="" />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-user"
+                                    width="44"
+                                    height="44"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    fill="#bbb"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none" />
+                                    <circle cx="12" cy="7" r="4" />
+                                    <path
+                                        d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                </svg>
                             </div>
                             <div class="d-none d-md-block d-lg-inline-block">
-                                Hi, Girl
+                                Hi, Gaez
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
