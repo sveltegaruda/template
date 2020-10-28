@@ -146,7 +146,7 @@ Example:
 .
 .
 <section class="section mt-5">
-    <Datatable {data} />
+    <Datatable />
 </section>
 ```
 
