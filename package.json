@@ -8,6 +8,8 @@
     "@sveltech/routify": "^1.9.9",
     "fs-extra": "^9.0.1",
     "nollup": "^0.13.13",
+    "purgecss": "^3.0.0",
+    "recursive-readdir": "^2.2.2",
     "rollup": "^2.3.4",
     "rollup-plugin-hot": "^0.1.0",
     "rollup-plugin-livereload": "^2.0.0",
@@ -16,11 +18,12 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0",
-    "dayjs": "^1.8.28"
+    "dayjs": "^1.8.28",
+    "sirv-cli": "^1.0.0"
   },
   "scripts": {
-    "build": "routify -b --dynamic-imports && rollup -c && node salin.js",
+    "build": "routify -b --dynamic-imports && rollup -c && node script/salin.js",
+    "build:purge": "npm run build && node script/pakaiPurge.js",
     "dev:rollup": "rollup -c -w",
     "dev:livereload": "rollup -c -w --environment LIVERELOAD",
     "dev:nollup": "nollup -c --hot --history-api-fallback --port 5000 --content-base ./public",
