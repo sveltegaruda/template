@@ -1,7 +1,7 @@
-import {Rows} from "./rows"
-import {Columns} from "./columns"
-import {dataToTable} from "./table"
-import {defaultConfig} from "./config"
+import { Rows } from "./rows"
+import { Columns } from "./columns"
+import { dataToTable } from "./table"
+import { defaultConfig } from "./config"
 import {
     isObject,
     isJson,
@@ -107,7 +107,7 @@ export class DataTable {
             if (this.options.plugins) {
                 Object.entries(this.options.plugins).forEach(([plugin, options]) => {
                     if (this[plugin] && typeof this[plugin] === "function") {
-                        this[plugin] = this[plugin](options, {createElement})
+                        this[plugin] = this[plugin](options, { createElement })
 
                         // Init plugin
                         if (options.enabled && this[plugin].init && typeof this[plugin].init === "function") {
@@ -127,15 +127,15 @@ export class DataTable {
     render(type) {
         if (type) {
             switch (type) {
-            case "page":
-                this.renderPage()
-                break
-            case "pager":
-                this.renderPager()
-                break
-            case "header":
-                this.renderHeader()
-                break
+                case "page":
+                    this.renderPage()
+                    break
+                case "pager":
+                    this.renderPager()
+                    break
+                case "header":
+                    this.renderHeader()
+                    break
             }
 
             return false
@@ -598,17 +598,20 @@ export class DataTable {
         // Pager(s) / sorting
         this.wrapper.addEventListener("click", e => {
             const t = e.target.closest('a')
-            if (t.nodeName.toLowerCase() === "a") {
-                if (t.hasAttribute("data-page")) {
-                    this.page(t.getAttribute("data-page"))
-                    e.preventDefault()
-                } else if (
-                    options.sortable &&
-                    t.classList.contains("dataTable-sorter") &&
-                    t.parentNode.getAttribute("data-sortable") != "false"
-                ) {
-                    this.columns().sort(this.headings.indexOf(t.parentNode))
-                    e.preventDefault()
+//            console.log(t);
+            if (t != null) {
+                if (t.nodeName.toLowerCase() === "a") {
+                    if (t.hasAttribute("data-page")) {
+                        this.page(t.getAttribute("data-page"))
+                        e.preventDefault()
+                    } else if (
+                        options.sortable &&
+                        t.classList.contains("dataTable-sorter") &&
+                        t.parentNode.getAttribute("data-sortable") != "false"
+                    ) {
+                        this.columns().sort(this.headings.indexOf(t.parentNode))
+                        e.preventDefault()
+                    }
                 }
             }
         }, false)
@@ -839,15 +842,14 @@ export class DataTable {
                     this.headerTable.tHead = thd
 
                     // Compensate for scrollbars.
-                    this.headerTable.parentElement.style.paddingRight = `${
-                        this.headerTable.clientWidth -
+                    this.headerTable.parentElement.style.paddingRight = `${this.headerTable.clientWidth -
                         this.table.clientWidth +
                         parseInt(
                             this.headerTable.parentElement.style.paddingRight ||
                             '0',
                             10
                         )
-                    }px`
+                        }px`
 
                     if (container.scrollHeight > container.clientHeight) {
                         // scrollbars on one page means scrollbars on all pages.
