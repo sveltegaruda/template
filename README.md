@@ -149,16 +149,16 @@ Example:
 
 ```html
 // file: src/pages/danang/data.json.js
-const data = [{
-    name: "Hedwig F. Nguyen",
-    position: "Manager",
-    company: "Arcu Vel Foundation"
-},
-{
-    name: "Genevieve U. Watts",
-    position: "Manager",
-    company: "Eget Incorporated"
-}];
+const data = [[
+    "Hedwig F. Nguyen",
+    "Manager",
+    "Arcu Vel Foundation"
+],
+[
+    "Genevieve U. Watts",
+    "Manager",
+    "Eget Incorporated"
+]];
 export default data;
 ```
 

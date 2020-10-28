@@ -1,66 +1,66 @@
-const data = [{
-    name: "Hedwig F. Nguyen",
-    position: "Manager",
-    company: "Arcu Vel Foundation"
-},
-{
-    name: "Genevieve U. Watts",
-    position: "Manager",
-    company: "Eget Incorporated"
-},
-{
-    name: "Kyra S. Baldwin",
-    position: "Manager",
-    company: "Lorem Vitae Limited"
-},
-{
-    name: "Stephen V. Hill",
-    position: "Manager",
-    company: "Eget Mollis Institute"
-},
-{
-    name: "Vielka Q. Chapman",
-    position: "Manager",
-    company: "Velit Pellentesque Ultricies Institute"
-},
-{
-    name: "Ocean W. Curtis",
-    position: "Manager",
-    company: "Eu Ltd"
-},
-{
-    name: "Kato F. Tucker",
-    position: "Manager",
-    company: "Vel Lectus Limited"
-},
-{
-    name: "Robin J. Wise",
-    position: "Manager",
-    company: "Curabitur Dictum PC"
-},
-{
-    name: "Uriel H. Guerrero",
-    position: "Assistant",
-    company: "Mauris Inc."
-},
-{
-    name: "Yasir W. Benson",
-    position: "Assistant",
-    company: "At Incorporated"
-},
-{
-    name: "Shafira U. French",
-    position: "Assistant",
-    company: "Nisi Magna Incorporated"
-},
-{
-    name: "Casey E. Hood",
-    position: "Assistant",
-    company: "Lorem Vitae Odio Consulting"
-},
-{
-    name: "Caleb X. Finch",
-    position: "Assistant",
-    company: "Elit Associates"
-}];
+const data = [[
+    "Hedwig F. Nguyen",
+    "Manager",
+    "Arcu Vel Foundation"
+],
+[
+    "Genevieve U. Watts",
+    "Manager",
+    "Eget Incorporated"
+],
+[
+    "Kyra S. Baldwin",
+    "Manager",
+    "Lorem Vitae Limited"
+],
+[
+    "Stephen V. Hill",
+    "Manager",
+    "Eget Mollis Institute"
+],
+[
+    "Vielka Q. Chapman",
+    "Manager",
+    "Velit Pellentesque Ultricies Institute"
+],
+[
+    "Ocean W. Curtis",
+    "Manager",
+    "Eu Ltd"
+],
+[
+    "Kato F. Tucker",
+    "Manager",
+    "Vel Lectus Limited"
+],
+[
+    "Robin J. Wise",
+    "Manager",
+    "Curabitur Dictum PC"
+],
+[
+    "Uriel H. Guerrero",
+    "Assistant",
+    "Mauris Inc."
+],
+[
+    "Yasir W. Benson",
+    "Assistant",
+    "At Incorporated"
+],
+[
+    "Shafira U. French",
+    "Assistant",
+    "Nisi Magna Incorporated"
+],
+[
+    "Casey E. Hood",
+    "Assistant",
+    "Lorem Vitae Odio Consulting"
+],
+[
+    "Caleb X. Finch",
+    "Assistant",
+    "Elit Associates"
+]];
 export default data;

@@ -40,9 +40,9 @@
                     {#each data as d, i}
                         <tr>
                             <td>{i + 1}</td>
-                            <td>{d.name}</td>
-                            <td>{d.position}</td>
-                            <td>{d.company}</td>
+                            <td>{d[0]}</td>
+                            <td>{d[1]}</td>
+                            <td>{d[2]}</td>
                         </tr>
                     {:else}
                         <tr>
