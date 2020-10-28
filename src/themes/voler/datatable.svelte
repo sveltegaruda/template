@@ -1,8 +1,9 @@
 <script>
     import { onMount } from "svelte";
     import { DataTable } from "@/tools/datatable/index";
+    import { dt } from "@/tools/store";
 
-    export let data;
+    let data = $dt;
     let promise = data.json;
 
     onMount(() => {
