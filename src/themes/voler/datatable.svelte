@@ -94,7 +94,7 @@
                 const btn = s.innerText;
                 let msg = "";
                 if (btn == "Edit") {
-                    msg = "Edit data dengan id " + id;
+                    msg = "Edit data with id " + id;
                 } else {
                     msg = "Delete data with id " + id;
                 }
@@ -116,6 +116,7 @@
     }
     .badge {
         padding: 8px 12px;
+        cursor: pointer;
     }
 </style>
 
