@@ -21,16 +21,70 @@
     import { dt } from "@/tools/store";
 
     let data = $dt;
-    let promise = data.json;
+    //let promise = data.json;
+    //    let spliced = { ...promise };
 
+    let json = [];
+    data.json.forEach((elem, i) => {
+        if (elem.length == data.json[i].length) {
+            //spliced[i].splice(0, 1);
+            json[i] = [...elem.slice(0, 0), ...elem.slice(0 + 1, elem.length)];
+        }
+        console.log(json[i])
+        console.log(data.json[i])
+    });
+    console.log(json);
+
+    /*     let a = [
+        { firstName: "Tony", lastName: "Stack" },
+        { firstName: "Iron", lastName: "Man" },
+    ];
+
+    let removed = a.map(({ firstName, ...lastName }) => lastName);
+
+    console.log("before:", a);
+    console.log("after:", removed);
+    console.log("before:", a);
+    let a = [
+        ["Tony", "Stack"],
+        ["Iron", "Man"],
+    ];
+    
+    //let removed = a.map(({ index, ...json }) => json);
+    let removed = [...a[0].slice(0, 0), ...a[0].slice(0 + 1, a[0].length)];
+    
+    console.log("before:", a);
+    console.log("after:", removed);
+    console.log("before:", a);
+ */
+
+    //console.log(preserve[5].length);
     function addNewData() {
         console.log("Add new data");
     }
 
     onMount(() => {
-        // Simple Datatable
-        //const dataTable = new DataTable("#table2");
+        /* 
+        promise.forEach((element, i) => {
+            if (element.length == spliced[i].length) {
+                //spliced[i].splice(0, 1);
+                tmp[i] = [
+                    ...element.slice(0, 0),
+                    ...element.slice(0 + 1, element.length),
+                ];
+            }
+            //console.log("elem: " + element.length);
+            //console.log(i + ". " + element);
+        });
+        console.log("tmp: " + tmp);
+         */
+        //console.log("spliced: " + spliced[0].length);
+        //console.log("promise: " + promise[0].length);
 
+        // Simple Datatable
+        const dataTable = new DataTable("#table2");
+
+        /*
         let dataTable = new DataTable("#table2", {
             columns: [
                 // Hide the sixth column
@@ -38,7 +92,6 @@
             ],
         });
 
-        /*
         const dataTable = new DataTable("#table2", {
             columns: [
                 // Sort the second column in ascending order
@@ -90,7 +143,8 @@
                 //get status edit/delete
                 //const btn = e.target.closest("span").innerText;
 
-                let id = dataTable.data[t.dataIndex].cells[1].innerText;
+                // let id = dataTable.data[t.dataIndex].cells[1].innerText;
+                let id = data.json[t.dataIndex][0];
                 const btn = s.innerText;
                 let msg = "";
                 if (btn == "Edit") {
@@ -102,6 +156,7 @@
             }
         });
     });
+    let cnt = 0;
 </script>
 
 <style>
@@ -139,7 +194,7 @@
                 </tr>
             </thead>
             <tbody>
-                {#await promise}
+                {#await json}
                     <p>...waiting</p>
                 {:then data}
                     {#each data as d, i}

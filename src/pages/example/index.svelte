@@ -5,7 +5,7 @@
 
     let data = {
         title: "Customer",
-        header: ["#", "id", "Name", "Position", "Company"],
+        header: ["#", "Name", "Position", "Company"],
         json: json,
     };
 
