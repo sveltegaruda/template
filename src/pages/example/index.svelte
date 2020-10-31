@@ -2,7 +2,7 @@
     import json from "./data.json";
     import Datatable from "@/themes/voler/datatable.svelte";
 
-    let data = {
+    let dataJson = {
         title: "Customer",
         header: ["#", "Name", "Position", "Company"],
         json: json,
@@ -61,5 +61,13 @@
     </div>
 </div>
 <section class="section mt-5">
-    <Datatable on:action={handleAction} {data} />
+    {#await dataJson}
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    {:then data}
+        <Datatable on:action={handleAction} {data} />
+    {:catch error}
+        <p style="color: red">{error.message}</p>
+    {/await}
 </section>

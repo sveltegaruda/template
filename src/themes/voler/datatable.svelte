@@ -32,7 +32,7 @@
                 //get status edit/delete
                 //const btn = e.target.closest("span").innerText;
 
-                let id = data.json[t.dataIndex][0];
+                const id = data.json[t.dataIndex][0];
                 const btn = s.innerText;
 
                 if (btn == "Edit") {
@@ -87,30 +87,22 @@
                 </tr>
             </thead>
             <tbody>
-                {#await json}
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                {:then data}
-                    {#each data as d, i}
-                        <tr>
-                            <td>{i + 1}</td>
-                            {#each d as v}
-                                <td>{v}</td>
-                            {/each}
-                            <td>
-                                <span class="badge bg-warning mb-1">Edit</span>
-                                <span class="badge bg-danger">Delete</span>
-                            </td>
-                        </tr>
-                    {:else}
-                        <tr>
-                            <td colspan="100%">Data tidak ada!</td>
-                        </tr>
-                    {/each}
-                {:catch error}
-                    <p style="color: red">{error.message}</p>
-                {/await}
+                {#each json as d, i}
+                    <tr>
+                        <td>{i + 1}</td>
+                        {#each d as v}
+                            <td>{v}</td>
+                        {/each}
+                        <td>
+                            <span class="badge bg-warning mb-1">Edit</span>
+                            <span class="badge bg-danger">Delete</span>
+                        </td>
+                    </tr>
+                {:else}
+                    <tr>
+                        <td colspan="100%">Data tidak ada!</td>
+                    </tr>
+                {/each}
             </tbody>
         </table>
     </div>
