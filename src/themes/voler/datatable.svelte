@@ -1,9 +1,11 @@
 <script>
     import { onMount } from "svelte";
     import { DataTable } from "@/tools/datatable/index";
-    import { dt } from "@/tools/store";
+    import { createEventDispatcher } from "svelte";
 
-    let data = $dt;
+    const dispatch = createEventDispatcher();
+
+    export let data;
 
     let json = [];
     data.json.forEach((elem, i) => {
@@ -34,24 +36,19 @@
                 const btn = s.innerText;
 
                 if (btn == "Edit") {
-                    editData(id);
+                    updateData("edit", id);
                 } else {
-                    deleteData(id);
+                    updateData("delete", id);
                 }
             }
         });
     });
 
-    function addNewData() {
-        console.log("Add new data");
-    }
-
-    function editData(id) {
-        console.log("Edit data with id " + id);
-    }
-
-    function deleteData(id) {
-        console.log("Delete data with id " + id);
+    function updateData(action, id = false) {
+        dispatch("action", {
+            action: action,
+            id: id,
+        });
     }
 </script>
 
@@ -75,7 +72,7 @@
     <div class="card-header">{data.title}</div>
     <div class="card-body mt-3">
         <div class="btn-add-new-data">
-            <span on:click={addNewData} class="badge bg-primary mb-2">Add New
+            <span on:click={updateData} class="badge bg-primary mb-2">Add New
                 Data</span>
         </div>
         <table class="table table-striped" id="table2">

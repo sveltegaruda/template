@@ -1,7 +1,6 @@
 <script>
     import json from "./data.json";
     import Datatable from "@/themes/voler/datatable.svelte";
-    import { dt } from "@/tools/store";
 
     let data = {
         title: "Customer",
@@ -9,7 +8,30 @@
         json: json,
     };
 
-    $dt = data;
+    function handleAction(event) {
+        switch (event.detail.action) {
+            case "edit":
+                editData(event.detail.id);
+                break;
+            case "delete":
+                deleteData(event.detail.id);
+                break;
+            default:
+                addNewData();
+        }
+    }
+
+    function addNewData() {
+        console.log("Add new data");
+    }
+
+    function editData(id) {
+        console.log("Edit data with id " + id);
+    }
+
+    function deleteData(id) {
+        console.log("Delete data with id " + id);
+    }
 </script>
 
 <div class="page-title">
@@ -39,5 +61,5 @@
     </div>
 </div>
 <section class="section mt-5">
-    <Datatable />
+    <Datatable on:action={handleAction} {data} />
 </section>
