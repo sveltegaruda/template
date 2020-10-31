@@ -88,7 +88,9 @@
             </thead>
             <tbody>
                 {#await json}
-                    <p>...waiting</p>
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 {:then data}
                     {#each data as d, i}
                         <tr>
@@ -97,12 +99,8 @@
                                 <td>{v}</td>
                             {/each}
                             <td>
-                                <span
-                                    row-index={i}
-                                    class="badge bg-warning mb-1">Edit</span>
-                                <span
-                                    row-index={i}
-                                    class="badge bg-danger">Delete</span>
+                                <span class="badge bg-warning mb-1">Edit</span>
+                                <span class="badge bg-danger">Delete</span>
                             </td>
                         </tr>
                     {:else}
