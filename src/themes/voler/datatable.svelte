@@ -32,7 +32,7 @@
 
                 let id = data.json[t.dataIndex][0];
                 const btn = s.innerText;
-                let msg = "";
+
                 if (btn == "Edit") {
                     editData(id);
                 } else {
