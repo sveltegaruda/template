@@ -167,3 +167,9 @@
 	content: " ";
 	display: table;
 }
+
+@media screen and (max-width:576px) {
+	.dataTable-pagination li {
+		float:initial
+	}
+}

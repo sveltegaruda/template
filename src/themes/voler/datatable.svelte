@@ -66,6 +66,7 @@
         padding: 8px 12px;
         cursor: pointer;
     }
+    
 </style>
 
 <div class="card">
