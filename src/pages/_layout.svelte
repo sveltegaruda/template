@@ -73,7 +73,12 @@
 						<li>
 							<a
 								class="dropdown-item"
-								href={$url('/example')}>Datatable</a>
+								href={$url('/zero')}>Zero Datatable</a>
+						</li>
+						<li>
+							<a
+								class="dropdown-item"
+								href={$url('/example')}>Voler Datatable</a>
 						</li>
 					</ul>
 				</li>

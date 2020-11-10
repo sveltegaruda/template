@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Sastro",
+      "position": "Office Boy",
+      "company": "Ubuntu"
+    },
+    {
+      "id": 2,
+      "name": "Suroto",
+      "position": "Front Office",
+      "company": "Microsoft"
+    },
+    {
+      "id": 3,
+      "name": "Sujiwo",
+      "position": "Sales Promotion",
+      "company": "Fedora"
+    },
+    {
+      "id": 4,
+      "name": "Tedjo",
+      "position": "Sales Promotion",
+      "company": "Microsoft"
+    },
+    {
+      "id": 5,
+      "name": "Marwoto",
+      "position": "Sales Promotion",
+      "company": "Copiy"
+    },
+    {
+      "id": 6,
+      "name": "Sukmo",
+      "position": "Office Boy",
+      "company": "Microsoft"
+    },
+    {
+      "id": 7,
+      "name": "Suroto",
+      "position": "Security",
+      "company": "Manjaro"
+    },
+    {
+      "id": 8,
+      "name": "Kroto",
+      "position": "Security",
+      "company": "Ubuntu"
+    },
+    {
+      "id": 9,
+      "name": "Sujiwo",
+      "position": "Office Boy",
+      "company": "Linux Mint"
+    },
+    {
+      "id": 10,
+      "name": "Wardoyo",
+      "position": "Front Office",
+      "company": "Manjaro"
+    },
+    {
+      "id": 11,
+      "name": "Sujiwo",
+      "position": "Security",
+      "company": "Fedora"
+    },
+    {
+      "id": 12,
+      "name": "Tedjo",
+      "position": "Security",
+      "company": "Microsoft"
+    },
+    {
+      "id": 13,
+      "name": "Kroto",
+      "position": "Office Boy",
+      "company": "Copiy"
+    },
+    {
+      "id": 14,
+      "name": "Tedjo",
+      "position": "Office Boy",
+      "company": "Lokopedia"
+    },
+    {
+      "id": 15,
+      "name": "Markonah",
+      "position": "Security",
+      "company": "Linux Mint"
+    },
+    {
+      "id": 16,
+      "name": "Marwoto",
+      "position": "Office Boy",
+      "company": "Bukataplak"
+    }
+  ]
+}
