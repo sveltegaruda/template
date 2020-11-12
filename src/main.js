@@ -1,15 +1,25 @@
-import App from './App.svelte'
+import '../assets/bootstrap';
+import feather from 'feather-icons';
+import HMR from '@roxi/routify/hmr';
+import App from './App.svelte';
 
-const app = new App({
-  target: document.body
-})
+window.feather = feather;
 
-export default app
+const app = HMR(App, { target: document.body }, 'routify-app');
 
-// recreate the whole app if an HMR update touches this module
-if (import.meta.hot) {
-  import.meta.hot.dispose(() => {
-    app.$destroy()
-  })
-  import.meta.hot.accept()
-}
+export default app;
+
+/** Service worker. Uncomment to use service worker */
+
+// if ('serviceWorker' in navigator) {
+//     addEventListener('app-loaded', () => {
+//         window.requestIdleCallback(() =>
+//             import('workbox-window').then(async ({ Workbox }) => {
+//                 const wb = new Workbox('/serviceworker.js')
+//                 const registration = await wb.register()
+//                 wb.addEventListener('installed', () => (console.log('installed service worker')))
+//                 wb.addEventListener('externalinstalled', () => (console.log('installed service worker')))
+//             })
+//         )
+//     })
+// }

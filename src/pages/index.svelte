@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	import { angka } from "@/tools/store";
+	import { angka } from "../tools/store";
 	setInterval(() => $angka++, 1000);
 </script>
 

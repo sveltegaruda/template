@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import { DataTable } from "@/tools/datatable/index";
+    import { DataTable } from "../../tools/datatable/index";
     import { createEventDispatcher } from "svelte";
 
     const dispatch = createEventDispatcher();

@@ -2,75 +2,75 @@
   // import { angka } from "@/tools/store";
   // setInterval(() => $angka++, 1000);
 
-  import Datatable from './Datatable.svelte';
+  import Datatable from "./Datatable.svelte";
   const handleAction = (e) => {
-    console.log(e.detail.store)
-    console.log(e.detail.payload)
+    console.log(e.detail.store);
+    console.log(e.detail.payload);
     // if (e.detail.store === 'sort') {
     //   configCustomer.datas = e.detail.payload
     // }
-  }
+  };
 
   import { onMount } from "svelte";
 
   onMount(() => {
-    dataCustomer()
-    dataCity()
-  })
+    dataCustomer();
+    dataCity();
+  });
 
   let configCustomer = {
-    store: 'customer',
-    title: 'Customer',
-    coloumns: ['Name', 'Position', 'Company'],
+    store: "customer",
+    title: "Customer",
+    coloumns: ["Name", "Position", "Company"],
     datas: [],
     limit: 5,
     rows: 0,
-    orderby: 'name',
-    sortby: 'asc',
-    isRender: false
-  }
-
+    orderby: "name",
+    sortby: "asc",
+    isRender: false,
+  };
+  let backend = "https://sveltegaruda.vercel.app";
   const dataCustomer = async () => {
     try {
-      const responses = await fetch('/customers.json', {
-        method: 'GET'
-      })
-      const response = await responses.json()
+      const responses = await fetch(backend + "/customers.json", {
+        method: "GET",
+      });
+      const response = await responses.json();
       if (responses.ok) {
-        configCustomer.datas = response.data
-        configCustomer.isRender = true
+        configCustomer.datas = response.data;
+        configCustomer.isRender = true;
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   let configCity = {
-    store: 'city',
-    title: 'City',
+    store: "city",
+    title: "City",
     coloumns: ["Province", "Type", "City_name", "Postal_code"],
     datas: [],
     limit: 25,
     rows: 0,
-    orderby: 'city_name',
-    sortby: 'asc',
-    isRender: false
-  }
+    orderby: "city_name",
+    sortby: "asc",
+    isRender: false,
+  };
 
   const dataCity = async () => {
     try {
-      const responses = await fetch('/city.json', {
-        method: 'GET'
-      })
-      const response = await responses.json()
+      const responses = await fetch(backend + "/city.json", {
+        method: "GET",
+      });
+      const response = await responses.json();
       if (responses.ok) {
-        configCity.datas = response.data
-        configCity.isRender = true
+        configCity.datas = response.data;
+        configCity.isRender = true;
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 </script>
 
 <!-- <div class="starter-template text-center py-5 px-3">
@@ -84,28 +84,9 @@
 </div> -->
 
 {#if configCustomer.isRender}
-  <Datatable
-    config={configCustomer}
-    on:handleAction={handleAction}
-  />
+  <Datatable config={configCustomer} on:handleAction={handleAction} />
 {/if}
 separasi
 {#if configCity.isRender}
-  <Datatable
-    config={configCity}
-    on:handleAction={handleAction}
-  />
+  <Datatable config={configCity} on:handleAction={handleAction} />
 {/if}
-
-<style>
-  div {
-    padding: 1em;
-    margin: 0 0 1em 0;
-    background-color: #eee;
-  }
-
-  .active {
-    background-color: #ff3e00;
-    color: white;
-  }
-</style>
