@@ -175,7 +175,7 @@ export default data;
 ```
 
 ## Demo
-You can open the demo <a href="https://sveltegaruda.verce.app" target="_blank">here</a>
+You can open the demo <a href="https://sveltegaruda.vercel.app" target="blank">here</a>
 
 ## Contributing
 
